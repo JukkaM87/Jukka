@@ -1,84 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
+#
+# Python coding task
+# Create this and add it to github
+#
 
-<style>
-
-  p { color: blue }
-  test { color: green }
-  #stuff {color: red;}
-  testi {
-  
-</style>
-
-</head>
-<body>
-
-<h1>Number guessing Game</h1>
-
-<p id="counter"></p>
-
-<button onclick="myfunctionminus()" id="mybuttonminus" > - </button>
-<p id="guess"></p>
-<button onclick="myfunctionplus()" id="mybuttonplus" > + </button>
-
-<button onclick="myfunctionevaluate()" id="mybuttonguess" > Take a guess </button>
-<p id="evaluate"></p>
-<button onclick="myfunctionreset()" id="mybuttonreset"> Reset Game </button>
-<button style="display none" onclick="myfunctionreset()" id="newgame" > New Game </button>
+# Add necessary imports here
 
 
-<script>
-var guesses = 0;
-var secretnumber = Math.floor(Math.random() * 10) + 1;
-var myguess = 5;
-document.getElementById("guess").innerHTML = myguess;
-document.getElementById("counter").innerHTML = "Number of guesses taken " + guesses;
-    
-function myfunctionplus(){
-   	if (myguess < 10){
-    myguess++;
-    document.getElementById("guess").innerHTML = myguess;
-}}
-function myfunctionminus(){
-   	if (myguess > 1){
-    myguess--;
-    document.getElementById("guess").innerHTML = myguess;
-}}
+# Step 1: Get sentence to be handled
+sentence = input("Enter your sentence")
+print(sentence)
 
-function myfunctionevaluate(){
-	guesses++
-    document.getElementById("counter").innerHTML = "Number of guesses taken " + guesses;
-	if (myguess == secretnumber){
-    	if (guesses > 1){
-        document.getElementById("evaluate").innerHTML = "Victory after " + guesses +" guesses";
-        }
-        else {
-        document.getElementById("evaluate").innerHTML = "Victory with first guess";
-        }
-        document.getElementById("newgame").style.display="block";
-        document.getElementById("mybuttonreset").style.display="none";
-        document.getElementById("mybuttonguess").disabled=true;
-        }
-    else if (myguess > secretnumber){
-    	document.getElementById("evaluate").innerHTML = "secretnumber is smaller...";
-        }
-    else {
-    	document.getElementById("evaluate").innerHTML = "secretnumber is bigger...";
-        }
-        }
-function myfunctionreset(){
-	guesses = 0;
-    document.getElementById("counter").innerHTML = "Number of guesses taken " + guesses;
-    secretnumber = Math.floor(Math.random() * 10) + 1;
-    myguess = 5;
-	document.getElementById("guess").innerHTML = myguess;
-    document.getElementById("newgame").style.display="none";
-    document.getElementById("mybuttonreset").style.display="block";
-    document.getElementById("evaluate").innerHTML = "New game has started...";
-    document.getElementById("mybuttonguess").disabled=false;
-}
-</script>
+# Step 2: Create a timestamp
 
-</body>
-</html>
+
+# Step 3: Add sentence and time stamp to object
+
+
+# Step 4: convert object to JSON 
+
+
+# Step 5: compress JSON object to zip
+
+# --- and now vice versa!
