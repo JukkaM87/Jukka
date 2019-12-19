@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<style>
+
+  p { color: blue }
+  test { color: green }
+  #stuff {color: red;}
+  testi {
+  
+</style>
+
+</head>
+<body>
+
+<h1>Number guessing Game</h1>
+
+<p id="counter"></p>
+
+<button onclick="myfunctionminus()" id="mybuttonminus" > - </button>
+<p id="guess"></p>
+<button onclick="myfunctionplus()" id="mybuttonplus" > + </button>
+
+<button onclick="myfunctionevaluate()" id="mybuttonguess" > Take a guess </button>
+<p id="evaluate"></p>
+<button onclick="myfunctionreset()" id="mybuttonreset"> Reset Game </button>
+<button style="display none" onclick="myfunctionreset()" id="newgame" > New Game </button>
+
+
+<script>
+var guesses = 0;
+var secretnumber = Math.floor(Math.random() * 10) + 1;
+var myguess = 5;
+document.getElementById("guess").innerHTML = myguess;
+document.getElementById("counter").innerHTML = "Number of guesses taken " + guesses;
+    
+function myfunctionplus(){
+   	if (myguess < 10){
+    myguess++;
+    document.getElementById("guess").innerHTML = myguess;
+}}
+function myfunctionminus(){
+   	if (myguess > 1){
+    myguess--;
+    document.getElementById("guess").innerHTML = myguess;
+}}
+
+function myfunctionevaluate(){
+	guesses++
+    document.getElementById("counter").innerHTML = "Number of guesses taken " + guesses;
+	if (myguess == secretnumber){
+    	if (guesses > 1){
+        document.getElementById("evaluate").innerHTML = "Victory after " + guesses +" guesses";
+        }
+        else {
+        document.getElementById("evaluate").innerHTML = "Victory with first guess";
+        }
+        document.getElementById("newgame").style.display="block";
+        document.getElementById("mybuttonreset").style.display="none";
+        document.getElementById("mybuttonguess").disabled=true;
+        }
+    else if (myguess > secretnumber){
+    	document.getElementById("evaluate").innerHTML = "secretnumber is smaller...";
+        }
+    else {
+    	document.getElementById("evaluate").innerHTML = "secretnumber is bigger...";
+        }
+        }
+function myfunctionreset(){
+	guesses = 0;
+    document.getElementById("counter").innerHTML = "Number of guesses taken " + guesses;
+    secretnumber = Math.floor(Math.random() * 10) + 1;
+    myguess = 5;
+	document.getElementById("guess").innerHTML = myguess;
+    document.getElementById("newgame").style.display="none";
+    document.getElementById("mybuttonreset").style.display="block";
+    document.getElementById("evaluate").innerHTML = "New game has started...";
+    document.getElementById("mybuttonguess").disabled=false;
+}
+</script>
+
+</body>
+</html>
